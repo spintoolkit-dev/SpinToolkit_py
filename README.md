@@ -4,8 +4,6 @@ This repository provides the user-facing documentation and python tutorials of t
 
 If you use **SpinToolkit** in your research, please cite our paper: [Super-lattice framework for spin wave theory I: single-particle excitations, multi-magnon continua, and finite-temperature effects](.....)
 
-:point_right:[image download here :package:](https://github.com/orgs/spintoolkit-dev/packages)
-
 SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, including
 
 - Linear/Nonlinear spin wave (Holstein-Primakoff approach)
@@ -15,9 +13,9 @@ SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, inclu
 - Landau-Lifshitz dynamics
 - Symmetry Analysis of interactions for any given crystal
 
-## Docker/Podman (Linux/MacOS/Windows)
+:tada: :tada: :tada: The Python API of **SpinToolkit** is now available as Docker [images](https://github.com/orgs/spintoolkit-dev/packages) on the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)!!!
 
-:tada: :tada: :tada: Now the [images](https://github.com/orgs/spintoolkit-dev/packages) of Python API are published!!!
+## Docker/Podman (Linux/MacOS/Windows)
 
 Using [Docker](https://www.docker.com/products/docker-hub/) or [Podman](https://podman.io/) is a convenient way to run the _SpinToolkit_ library without spending effort installing all the dependencies, and is recommended to all users. These two softwares share almost identical usage, so converting from one to another is painless. In fact, if you are using Podman in systems like Ubuntu, you can install the tool `podman-docker` and continue to use Docker syntax where `docker` is really `podman` in disguise. Alternatively, you can `alias docker=podman` to use Docker syntax with Podman engine.
 
