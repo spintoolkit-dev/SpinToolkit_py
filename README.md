@@ -2,8 +2,6 @@
 
 This repository provides the user-facing documentation and python tutorials of the **SpinToolkit** library.
 
-If you use **SpinToolkit** in your research, please cite our paper: [Super-lattice framework for spin wave theory I: single-particle excitations, multi-magnon continua, and finite-temperature effects](.....)
-
 SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, including
 
 - Linear/Nonlinear spin wave (Holstein-Primakoff approach)
@@ -102,7 +100,7 @@ A few commonly used commands to manage images and containers:
   #             --sweeps_per_dump 10000 &
   ```
 
-## Version
+## Changelog
 
 ### v1.2.0
 
@@ -117,3 +115,12 @@ The initial release version of image
    For instance, `help(sptk)` shows all available classes/function, and `help(sptk.date_and_time)` shows the definition of the `date_and_time` function.
 
    Alternatively, if you are using IPython or Jupyter, `sptk.date_and_time?` should also work.
+
+
+## Citing
+
+If you find **SpinToolkit** useful, please cite this paper:
+
+```bibtex
+
+```
