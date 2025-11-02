@@ -1,1 +1,0 @@
-Demo code for **Super-lattice framework for spin wave theory I: single-particle excitations, multi-magnon continua, and finite-temperature effects**
