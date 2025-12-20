@@ -13,7 +13,7 @@ SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, inclu
 
 :tada: :tada: :tada: The Python API of **SpinToolkit** is now available as Docker [images](https://github.com/orgs/spintoolkit-dev/packages) on the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)!!!
 
-The documentation of the library can be found at [SpinToolkit_py](https://github.com/orgs/spintoolkit-dev/packages).
+The documentation of the library can be found at [SpinToolkit_py](https://spintoolkit-dev.github.io/SpinToolkit_py/).
 
 ## Docker/Podman (Linux/MacOS/Windows)
 
