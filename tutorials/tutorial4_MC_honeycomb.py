@@ -4,7 +4,7 @@ import numpy as np
 import os
 import shutil
 import argparse
-import SpinToolkit_py as sptk
+import spintoolkit_py as sptk
 
 sptk.print_system_info()
 
@@ -24,6 +24,12 @@ parser.add_argument('--log_interval',    type = int,   default = 50,     help = 
 parser.add_argument('--sweeps_per_dump', type = int,   default = 10000,  help = 'Frequency of taking snapshots.')
 
 args = parser.parse_args()
+
+# Print all arguments
+print("Command line arguments:")
+for arg, value in vars(args).items():
+    print(f"{arg:18}: {value}")
+print()
 
 
 # Define a honeycomb lattice to be used
