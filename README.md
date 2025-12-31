@@ -123,7 +123,7 @@ docker run --rm \
        -w <container_workdir> <image_name> \
        python3 <python_script> \
        <input_arguments>
-# e.g., docker run --rm -v ./tutorials_py:/home/ubuntu/tutorials_py:z -w /home/ubuntu/tutorials_py spintoolkit:1.4.2 python3 /home/ubuntu/tutorials_py/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.4.2 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
 ## Changelog
