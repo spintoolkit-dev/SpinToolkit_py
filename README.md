@@ -19,6 +19,10 @@ Tutorials are available in the `tutorials` folder.
 
 1. **Prerequisite**: Install [Docker](https://www.docker.com) **or** [Podman](https://podman.io/).
 
+   Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
+
+   > **Note to Podman users**: on systems like Ubuntu, you can install `podman-docker` or simply run `alias docker=podman` to use standard Docker syntax.
+
 2. **Download Image**: Pull the SpinToolkit image from the command line:
 
     ``` shell
@@ -41,10 +45,6 @@ Tutorials are available in the `tutorials` folder.
     ```
 
 ## Docker & Podman Reference
-
-Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
-
-> **Note to Podman users**: on systems like Ubuntu, you can install `podman-docker` or simply run `alias docker=podman` to use standard Docker syntax.
 
 ### Management Commands
 
