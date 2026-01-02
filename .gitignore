@@ -32,25 +32,14 @@
 # Folders
 bin
 build
-cmake-build-*
 dump
-python/inputs
-results
 xbuild
 .idea
 .ipynb_checkpoints
 .vscode
 
-#temporarily keep the doxygen files private
-docs/html
-docs/latex
-
 # Other files
 .DS_Store
 *.xz
-*.nb
-*.lyx
 *.dat
-log*.txt
-output.txt
 *~
