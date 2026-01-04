@@ -157,7 +157,7 @@
 <dt class="sig sig-object py" id="spintoolkit_py.k_cut">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">k_cut</span></span><a class="headerlink" href="#spintoolkit_py.k_cut" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
-<p>Trajectories in k space</p>
+<p>Trajectories in k space.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="spintoolkit_py.k_cut.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.k_cut" title="spintoolkit_py.k_cut"><span class="pre">spintoolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#spintoolkit_py.k_cut.__init__" title="Link to this definition"></a></dt>
@@ -251,7 +251,7 @@
 <dt class="sig sig-object py" id="spintoolkit_py.k_map">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">k_map</span></span><a class="headerlink" href="#spintoolkit_py.k_map" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
-<p>2D mesh in k space</p>
+<p>2D mesh in k space.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="spintoolkit_py.k_map.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.k_map" title="spintoolkit_py.k_map"><span class="pre">spintoolkit_py.k_map</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#spintoolkit_py.k_map.__init__" title="Link to this definition"></a></dt>
@@ -477,7 +477,7 @@ To fully suppress the weight, should use integrator which conserves magnetizatio
 <li><p><strong>k_cut</strong> – k-space trajectory for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
 <li><p><strong>omega_min</strong> – Lower bound of the energy window for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
 <li><p><strong>omega_max</strong> – Upper bound of the energy window for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
-<li><p><strong>dt</strong> – Time step size used the EOM.</p></li>
+<li><p><strong>dt</strong> – Time step size used in EOM.</p></li>
 <li><p><strong>maxtime</strong> – Total integration time.</p></li>
 <li><p><strong>dump_dir</strong> – The location where the initial equilibrium spin configuration should be prepared; also the location where the final output will be written to.</p></li>
 <li><p><strong>filename_prefix</strong> – Prefix of the output files (“xxx_half.dat” and “xxx_full.dat”). (Default: “DSSF”)</p></li>
@@ -497,7 +497,7 @@ To fully suppress the weight, should use integrator which conserves magnetizatio
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> – Underlying model.</p></li>
-<li><p><strong>k_tilde</strong> – The momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}\)</span>.</p></li>
+<li><p><strong>k_tilde</strong> – <span class="math notranslate nohighlight">\([\tilde{k}_0, \tilde{k}_1, \ldots ]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}= \sum_i \tilde{k}_i \boldsymbol{B}_i\)</span>.</p></li>
 <li><p><strong>R</strong> – Rotation matrices of all sites in the magnetic unit cell.</p></li>
 <li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
 </ul>
@@ -519,7 +519,7 @@ To fully suppress the weight, should use integrator which conserves magnetizatio
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> – Underlying model.</p></li>
-<li><p><strong>k_tilde</strong> – The momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}\)</span>.</p></li>
+<li><p><strong>k_tilde</strong> – <span class="math notranslate nohighlight">\([\tilde{k}_0, \tilde{k}_1, \ldots ]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}= \sum_i \tilde{k}_i \boldsymbol{B}_i\)</span>.</p></li>
 <li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
 </ul>
 </dd>

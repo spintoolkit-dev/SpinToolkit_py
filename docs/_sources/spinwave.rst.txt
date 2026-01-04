@@ -87,7 +87,7 @@ Core Functions
     :param k_cut: k-space trajectory for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
     :param omega_min: Lower bound of the energy window for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
     :param omega_max: Upper bound of the energy window for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
-    :param dt: Time step size used the EOM.
+    :param dt: Time step size used in EOM.
     :param maxtime: Total integration time.
     :param dump_dir: The location where the initial equilibrium spin configuration should be prepared; also the location where the final output will be written to.
     :param filename_prefix: Prefix of the output files ("xxx_half.dat" and "xxx_full.dat"). (Default: "DSSF")
