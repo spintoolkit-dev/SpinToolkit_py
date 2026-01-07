@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Class &mdash; SpinToolkit v1.4.2 documentation</title>
+  <title>Class &mdash; SpinToolkit v1.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
@@ -13,7 +13,7 @@
   
         <script src="_static/jquery.js?v=8dae8fb0"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=f946f941"></script>
+        <script src="_static/documentation_options.js?v=1b13bd6b"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -56,13 +56,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.coor2cart"><code class="docutils literal notranslate"><span class="pre">lattice.coor2cart()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.bond_length_min"><code class="docutils literal notranslate"><span class="pre">lattice.bond_length_min()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.coor2site"><code class="docutils literal notranslate"><span class="pre">lattice.coor2site()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.coor2supercell0"><code class="docutils literal notranslate"><span class="pre">lattice.coor2supercell0()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.k2superBZ"><code class="docutils literal notranslate"><span class="pre">lattice.k2superBZ()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.k2superlattice"><code class="docutils literal notranslate"><span class="pre">lattice.k2superlattice()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.l0"><code class="docutils literal notranslate"><span class="pre">lattice.l0()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.l1"><code class="docutils literal notranslate"><span class="pre">lattice.l1()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.l2"><code class="docutils literal notranslate"><span class="pre">lattice.l2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.polarization_matrix"><code class="docutils literal notranslate"><span class="pre">lattice.polarization_matrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.q_tilted"><code class="docutils literal notranslate"><span class="pre">lattice.q_tilted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.r2superlattice"><code class="docutils literal notranslate"><span class="pre">lattice.r2superlattice()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.site2coor"><code class="docutils literal notranslate"><span class="pre">lattice.site2coor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.total_sites"><code class="docutils literal notranslate"><span class="pre">lattice.total_sites()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.basis_A"><code class="docutils literal notranslate"><span class="pre">lattice.basis_A</span></code></a></li>
@@ -294,34 +294,9 @@ given coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and s
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="spintoolkit_py.lattice.coor2supercell0">
-<span class="sig-name descname"><span class="pre">coor2supercell0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.coor2supercell0" title="Link to this definition"></a></dt>
-<dd><p>Decompose a coordinate into its 1st supercell component and supercell index.</p>
-<p>Given coordinate <span class="math notranslate nohighlight">\((m_0, m_1, ...)\)</span>, decompose as</p>
-<div class="math notranslate nohighlight">
-\[\sum_i m_i \boldsymbol{a}_i =  \tilde{\boldsymbol{r}} + \sum_i m_i^0 \boldsymbol{a}_i,\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[\tilde{\boldsymbol{r}} \equiv \sum_i M_i \boldsymbol{A}_i,\]</div>
-<p>and <span class="math notranslate nohighlight">\(m_i^0\)</span> is located in the 1st supercell.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span>.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>coor0</strong> (<em>list[int]</em>) – Coordinate <span class="math notranslate nohighlight">\([m_0^0, m_1^0, \ldots]\)</span>.</p></li>
-<li><p><strong>M</strong> (<em>list[int]</em>) – Supercell index <span class="math notranslate nohighlight">\([M_0, M_1, \ldots]\)</span>.</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="spintoolkit_py.lattice.k2superBZ">
-<span class="sig-name descname"><span class="pre">k2superBZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.k2superBZ" title="Link to this definition"></a></dt>
-<dd><p>Decompose a k-vector into the superlattice BZ.</p>
+<dt class="sig sig-object py" id="spintoolkit_py.lattice.k2superlattice">
+<span class="sig-name descname"><span class="pre">k2superlattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.k2superlattice" title="Link to this definition"></a></dt>
+<dd><p>Decompose a k-vector onto the superlattice.</p>
 <div class="math notranslate nohighlight">
 \[\boldsymbol{k} = \boldsymbol{K} + \tilde{\boldsymbol{k}},\]</div>
 <p>where</p>
@@ -409,6 +384,31 @@ given coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and s
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spintoolkit_py.lattice.r2superlattice">
+<span class="sig-name descname"><span class="pre">r2superlattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.r2superlattice" title="Link to this definition"></a></dt>
+<dd><p>Decompose a real-space coordinate onto the superlattice.</p>
+<p>Given coordinate <span class="math notranslate nohighlight">\((m_0, m_1, ...)\)</span>, decompose as</p>
+<div class="math notranslate nohighlight">
+\[\sum_i m_i \boldsymbol{a}_i =  \tilde{\boldsymbol{r}} + \sum_i m_i^0 \boldsymbol{a}_i,\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\boldsymbol{r}} \equiv \sum_i \tilde{r}_i \boldsymbol{A}_i,\quad \tilde{r}_i \in \text{Integers}\]</div>
+<p>and <span class="math notranslate nohighlight">\(m_i^0\)</span> is located in the 1st supercell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>coor0</strong> (<em>list[int]</em>) – Coordinate <span class="math notranslate nohighlight">\([m_0^0, m_1^0, \ldots]\)</span>.</p></li>
+<li><p><strong>rtilde</strong> (<em>list[int]</em>) – Superlattice index <span class="math notranslate nohighlight">\([\tilde{r}_0, \tilde{r}_1, \ldots]\)</span>.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
