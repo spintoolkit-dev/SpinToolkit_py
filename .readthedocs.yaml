@@ -1,0 +1,10 @@
+version: 2
+
+build:
+  os: ubuntu-lts-latest
+  tools:
+    python: "3.10"
+  commands:
+    - rm -rf $READTHEDOCS_OUTPUT/html/* # Force remove any existing output to "clear cache"
+    - mkdir -p $READTHEDOCS_OUTPUT/html/
+    - cp -r docs/* $READTHEDOCS_OUTPUT/html/
