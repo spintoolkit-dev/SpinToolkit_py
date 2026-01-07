@@ -30,7 +30,7 @@ Tutorials are available in the `tutorials` folder.
     #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.0
     ```
 
-   **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
 
 3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type:
 
