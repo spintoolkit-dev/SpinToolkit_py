@@ -32,7 +32,7 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.0
+    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.1
     ```
 
    > **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
@@ -42,11 +42,11 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
     ``` shell
     # Create the short alias
     docker tag ghcr.io/spintoolkit-dev/spintoolkit:<image_tag> spintoolkit:<image_tag>
-    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.5.0 spintoolkit:1.5.0
+    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.5.1 spintoolkit:1.5.1
 
     # (Optional) Remove the reference to the long name to clean up list
     docker rmi ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.5.0
+    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.5.1
     ```
 
 ## Docker & Podman Reference
@@ -74,7 +74,7 @@ First, start a container in the background. This shares your local folder with t
 
 ``` shell
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.5.0
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.5.1
 ```
 > **Note**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 
@@ -129,10 +129,14 @@ docker run --rm \
        -w <container_workdir> <image_name> \
        python3 <python_script> \
        <input_arguments>
-# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.5.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.5.1 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
 ## Changelog
+
+- **v1.5.1** (01/12/2026)
+
+    Improve numerical stability of Stevens matrices generation.
 
 - **v1.5.0** (01/07/2026)
 
