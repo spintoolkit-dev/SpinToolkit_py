@@ -28,16 +28,18 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
    > **Note to Podman users**: on systems like Ubuntu, you can install `podman-docker` or simply run `alias docker=podman` to use standard Docker syntax.
 
-2. **Download Image**: Pull the SpinToolkit image from the command line:
+2. **Download Image**: Pull the SpinToolkit image from the command line.
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
     #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.1
     ```
 
-   > **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > **Note 1**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > 
+   > **Note 2**: if you find the download speed to be low, turning on proxy/vpn should help.
 
-3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type:
+3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type.
 
     ``` shell
     # Create the short alias
