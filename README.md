@@ -32,7 +32,7 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.1
+    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
     ```
 
    > **Note 1**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
@@ -44,11 +44,11 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
     ``` shell
     # Create the short alias
     docker tag ghcr.io/spintoolkit-dev/spintoolkit:<image_tag> spintoolkit:<image_tag>
-    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.5.1 spintoolkit:1.5.1
+    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.6.0 spintoolkit:1.6.0
 
     # (Optional) Remove the reference to the long name to clean up list
     docker rmi ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.5.1
+    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
     ```
 
 ## Docker & Podman Reference
@@ -76,7 +76,7 @@ First, start a container in the background. This shares your local folder with t
 
 ``` shell
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.5.1
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
 ```
 > **Note**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 
@@ -131,10 +131,17 @@ docker run --rm \
        -w <container_workdir> <image_name> \
        python3 <python_script> \
        <input_arguments>
-# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.5.1 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
 ## Changelog
+
+- **v1.6.0** (02/03/2026)
+
+    - **BREAKING**: Multiply prefactor 1/2π in definition of DSSF to be more consistent with classical inelastic neutron scattering textbooks.
+    - **BREAKING**: Change type of `basis_a` and `pos_sub` in `Crystal` class to be more consistent with `lattice` class.
+    - Include linear equation solver for self-adjoint matrices. 
+    - Various minor improvements.
 
 - **v1.5.1** (01/12/2026)
 
@@ -158,7 +165,7 @@ If you find SpinToolkit useful, please cite this paper:
 
 ```bibtex
 @misc{sptk,
-author = {Xu, L. and Shi, X. and Jiao, Y. and Yang, J. and Wang, Z.},
+author = {Xu, L. and Shi, X. and Jiao, Y. and Yang, J. and Yang, L. and Wang, Z.},
 title = {In preparation},
 year = {2026}
 }
