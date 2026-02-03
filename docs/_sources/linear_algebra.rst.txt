@@ -580,6 +580,45 @@ Functions
     :rtype: spintoolkit_py.MatrixZ
     :return: Solution X.
 
+.. function:: solve_symmetric(A: spintoolkit_py.MatrixD, B: list[float]) -> list[float]
+
+    Solve :math:`A \vec{X} = B`, where A should be a real symmetric matrix.
+
+    :param A: The real symmetric matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: list[float]
+    :return: Solution X.
+
+.. function:: solve_Hermitian(A: spintoolkit_py.MatrixZ, B: list[complex]) -> list[complex]
+    :no-index:
+
+    Solve :math:`A \vec{X} = B`, where A should be a complex Hermitian matrix.
+
+    :param A: The complex Hermitian matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: list[complex]
+    :return: Solution X.
+
+.. function:: solve_symmetric(A: spintoolkit_py.MatrixD, B: spintoolkit_py.MatrixD) -> spintoolkit_py.MatrixD
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a real symmetric matrix.
+
+    :param A: The real symmetric matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: spintoolkit_py.MatrixD
+    :return: Solution X.
+
+.. function:: solve_Hermitian(A: spintoolkit_py.MatrixZ, B: spintoolkit_py.MatrixZ) -> spintoolkit_py.MatrixZ
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a complex Hermitian matrix.
+
+    :param A: The complex Hermitian matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: spintoolkit_py.MatrixZ
+    :return: Solution X.
+
 .. function:: chol(A: spintoolkit_py.MatrixD, uplo: str) -> spintoolkit_py.MatrixD
 
     Cholesky decomposition: :math:`A = R^T R` (if uplo='U'), or :math:`A = R R^T` (if uplo='L').
@@ -620,25 +659,6 @@ Functions
         * **s** (*list[float]*) - Singular values in descending order.
         * **V** (*spintoolkit_py.MatrixZ*) - :math:`n\times n` unitary matrix.
 
-.. function:: eig_sym(A: spintoolkit_py.MatrixD) -> tuple[list[float], spintoolkit_py.MatrixD]
-
-    Eigen decomposition of a dense symmetric matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
-
-    :param A: The symmetric matrix to be decomposed.
-    :Returns:
-        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
-        * **eigvec** (*spintoolkit_py.MatrixD*) - The eigenvector matrix V.
-
-.. function:: eig_sym(A: spintoolkit_py.MatrixZ) -> tuple[list[float], spintoolkit_py.MatrixZ]
-    :no-index:
-
-    Eigen decomposition of a dense Hermitian matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
-
-    :param A: The hermitian matrix to be decomposed.
-    :Returns:
-        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
-        * **eigvec** (*spintoolkit_py.MatrixZ*) - The eigenvector matrix V.
-
 .. function:: eig_gen(A: spintoolkit_py.MatrixD) -> tuple[list[complex], spintoolkit_py.MatrixD]
 
     Eigen decomposition of a dense general square matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
@@ -656,4 +676,23 @@ Functions
     :param A: The matrix to be decomposed.
     :Returns:
         * **eigval** (*list[complex]*) - The eigenvalues.
+        * **eigvec** (*spintoolkit_py.MatrixZ*) - The eigenvector matrix V.
+
+.. function:: eig_sym(A: spintoolkit_py.MatrixD) -> tuple[list[float], spintoolkit_py.MatrixD]
+
+    Eigen decomposition of a dense symmetric matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The symmetric matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
+        * **eigvec** (*spintoolkit_py.MatrixD*) - The eigenvector matrix V.
+
+.. function:: eig_sym(A: spintoolkit_py.MatrixZ) -> tuple[list[float], spintoolkit_py.MatrixZ]
+    :no-index:
+
+    Eigen decomposition of a dense Hermitian matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The hermitian matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
         * **eigvec** (*spintoolkit_py.MatrixZ*) - The eigenvector matrix V.

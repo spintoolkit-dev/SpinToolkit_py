@@ -34,6 +34,16 @@ Core Functions
 
     Calculate the dispersion :math:`\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}` and the dynamic spin structure factor (DSSF) :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`, using dipole mode.
 
+    .. math::
+
+       \mathcal{S}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
+
+    where
+
+    .. math::
+
+       \hat{S}_{\boldsymbol{k}}^\mu = \frac{1}{\sqrt{N_\infty}} \sum_i e^{-i\boldsymbol{k}\cdot \boldsymbol{r}_i} \hat{S}_i^\mu .
+
     :param model: Underlying model.
     :param R: Rotation matrices of all sites in the magnetic unit cell.
     :param T: Temperature.
@@ -69,6 +79,16 @@ Core Functions
     :no-index:
 
     Calculate the dynamic spin structure factor (DSSF) :math:`\mathcal{S}_\text{quantum}^{\mu\nu}(\boldsymbol{k},\omega)` by equation of motion (EOM), using dipole mode.
+
+    .. math::
+
+       \mathcal{S}_\text{quantum}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
+
+    where
+
+    .. math::
+
+       \hat{S}_{\boldsymbol{k}}^\mu = \frac{1}{\sqrt{L}} \sum_i e^{-i\boldsymbol{k}\cdot \boldsymbol{r}_i} \hat{S}_i^\mu .
 
     To compare with quantum mechanical results, we have multiplied the final intensities by :math:`\beta \omega` (valid for :math:`\beta \omega \gg 1`):
 

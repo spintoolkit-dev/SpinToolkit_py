@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Classes &mdash; SpinToolkit v1.5.0 documentation</title>
+  <title>Classes &mdash; SpinToolkit v1.6.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
@@ -13,7 +13,7 @@
   
         <script src="_static/jquery.js?v=8dae8fb0"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=1b13bd6b"></script>
+        <script src="_static/documentation_options.js?v=896c6380"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -236,10 +236,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.kron"><code class="docutils literal notranslate"><span class="pre">kron()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.solve"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.solve_triangular"><code class="docutils literal notranslate"><span class="pre">solve_triangular()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.solve_symmetric"><code class="docutils literal notranslate"><span class="pre">solve_symmetric()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.chol"><code class="docutils literal notranslate"><span class="pre">chol()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.svd"><code class="docutils literal notranslate"><span class="pre">svd()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.eig_sym"><code class="docutils literal notranslate"><span class="pre">eig_sym()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.eig_gen"><code class="docutils literal notranslate"><span class="pre">eig_gen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.eig_sym"><code class="docutils literal notranslate"><span class="pre">eig_sym()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1659,6 +1660,86 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="spintoolkit_py.solve_symmetric">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">solve_symmetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.solve_symmetric" title="Link to this definition"></a></dt>
+<dd><p>Solve <span class="math notranslate nohighlight">\(A \vec{X} = B\)</span>, where A should be a real symmetric matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – The real symmetric matrix on LHS.</p></li>
+<li><p><strong>B</strong> – RHS of the equation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Solution X.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">solve_Hermitian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Solve <span class="math notranslate nohighlight">\(A \vec{X} = B\)</span>, where A should be a complex Hermitian matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – The complex Hermitian matrix on LHS.</p></li>
+<li><p><strong>B</strong> – RHS of the equation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[complex]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Solution X.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">solve_symmetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></span></dt>
+<dd><p>Solve <span class="math notranslate nohighlight">\(A X = B\)</span>, where A should be a real symmetric matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – The real symmetric matrix on LHS.</p></li>
+<li><p><strong>B</strong> – RHS of the equation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD">spintoolkit_py.MatrixD</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Solution X.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">solve_Hermitian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></span></dt>
+<dd><p>Solve <span class="math notranslate nohighlight">\(A X = B\)</span>, where A should be a complex Hermitian matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – The complex Hermitian matrix on LHS.</p></li>
+<li><p><strong>B</strong> – RHS of the equation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ">spintoolkit_py.MatrixZ</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Solution X.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="spintoolkit_py.chol">
 <span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">chol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">uplo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></span><a class="headerlink" href="#spintoolkit_py.chol" title="Link to this definition"></a></dt>
 <dd><p>Cholesky decomposition: <span class="math notranslate nohighlight">\(A = R^T R\)</span> (if uplo=’U’), or <span class="math notranslate nohighlight">\(A = R R^T\)</span> (if uplo=’L’).</p>
@@ -1735,40 +1816,6 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="spintoolkit_py.eig_sym">
-<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">eig_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.eig_sym" title="Link to this definition"></a></dt>
-<dd><p>Eigen decomposition of a dense symmetric matrix <span class="math notranslate nohighlight">\(AV=V\text{diag}(e_0,\ldots,e_{n-1})\)</span>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>A</strong> – The symmetric matrix to be decomposed.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>eigval</strong> (<em>list[float]</em>) - The eigenvalues in ascending order.</p></li>
-<li><p><strong>eigvec</strong> (<em>spintoolkit_py.MatrixD</em>) - The eigenvector matrix V.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">eig_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
-<dd><p>Eigen decomposition of a dense Hermitian matrix <span class="math notranslate nohighlight">\(AV=V\text{diag}(e_0,\ldots,e_{n-1})\)</span>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>A</strong> – The hermitian matrix to be decomposed.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>eigval</strong> (<em>list[float]</em>) - The eigenvalues in ascending order.</p></li>
-<li><p><strong>eigvec</strong> (<em>spintoolkit_py.MatrixZ</em>) - The eigenvector matrix V.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="spintoolkit_py.eig_gen">
 <span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">eig_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.eig_gen" title="Link to this definition"></a></dt>
 <dd><p>Eigen decomposition of a dense general square matrix <span class="math notranslate nohighlight">\(AV=V\text{diag}(e_0,\ldots,e_{n-1})\)</span>.</p>
@@ -1796,6 +1843,40 @@
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>eigval</strong> (<em>list[complex]</em>) - The eigenvalues.</p></li>
+<li><p><strong>eigvec</strong> (<em>spintoolkit_py.MatrixZ</em>) - The eigenvector matrix V.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spintoolkit_py.eig_sym">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">eig_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#spintoolkit_py.MatrixD" title="spintoolkit_py.MatrixD"><span class="pre">spintoolkit_py.MatrixD</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.eig_sym" title="Link to this definition"></a></dt>
+<dd><p>Eigen decomposition of a dense symmetric matrix <span class="math notranslate nohighlight">\(AV=V\text{diag}(e_0,\ldots,e_{n-1})\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> – The symmetric matrix to be decomposed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>eigval</strong> (<em>list[float]</em>) - The eigenvalues in ascending order.</p></li>
+<li><p><strong>eigvec</strong> (<em>spintoolkit_py.MatrixD</em>) - The eigenvector matrix V.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">spintoolkit_py.</span></span><span class="sig-name descname"><span class="pre">eig_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#spintoolkit_py.MatrixZ" title="spintoolkit_py.MatrixZ"><span class="pre">spintoolkit_py.MatrixZ</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Eigen decomposition of a dense Hermitian matrix <span class="math notranslate nohighlight">\(AV=V\text{diag}(e_0,\ldots,e_{n-1})\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> – The hermitian matrix to be decomposed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>eigval</strong> (<em>list[float]</em>) - The eigenvalues in ascending order.</p></li>
 <li><p><strong>eigvec</strong> (<em>spintoolkit_py.MatrixZ</em>) - The eigenvector matrix V.</p></li>
 </ul>
 </dd>

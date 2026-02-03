@@ -107,34 +107,34 @@ Classes
 
         Default constructor.
 
-    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: list[list[float]], pos_sub: list[list[float]], types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct by inferring symmetry from basis vectors and site positions.
 
-        :param basis_a: The matrix of real-space basis vectors, where column-j corresponds to basis :math:`\boldsymbol{a}_j`.
+        :param basis_a: Real-space basis vectors :math:`[\boldsymbol{a}_0, \boldsymbol{a}_1, \ldots]`.
         :param pos_sub: List of sublattice coordinates in units of the basis :math:`\boldsymbol{a}_j`.
         :param types: List of atom types (If list empty, all atoms are set to type 0). (Default: [])
         :param symprec: Tolerance for symmetry checks. (Default: 1.0e-5)
 
-    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], symbol: str, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: list[list[float]], pos_sub: list[list[float]], symbol: str, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct from a given space group symbol.
 
-        :param basis_a: The matrix of real-space basis vectors, where column-j corresponds to basis :math:`\boldsymbol{a}_j`.
+        :param basis_a: Real-space basis vectors :math:`[\boldsymbol{a}_0, \boldsymbol{a}_1, \ldots]`.
         :param pos_sub: List of sublattice coordinates in units of the basis :math:`\boldsymbol{a}_j`.
         :param symbol: Space group symbol (e.g., "P -1", "F d -3 m").
         :param setting: Space group setting. (Default: "")
         :param types: List of atom types (If list empty, all atoms are set to type 0). (Default: [])
         :param symprec: Tolerance for symmetry checks. (Default: 1.0e-5)
 
-    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], spacegroup_number: int, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: list[list[float]], pos_sub: list[list[float]], spacegroup_number: int, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct from a given international space group number.
 
-        :param basis_a: The matrix of real-space basis vectors, where column-j corresponds to basis :math:`\boldsymbol{a}_j`.
+        :param basis_a: Real-space basis vectors :math:`[\boldsymbol{a}_0, \boldsymbol{a}_1, \ldots]`.
         :param pos_sub: List of sublattice coordinates in units of the basis :math:`\boldsymbol{a}_j`.
         :param spacegroup_number: International space group number.
         :param setting: Space group setting. (Default: "")
