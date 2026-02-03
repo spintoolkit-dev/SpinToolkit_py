@@ -386,6 +386,11 @@ using SU(N) mode.</p>
 <dd><p>Calculate the dispersion <span class="math notranslate nohighlight">\(\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}\)</span>
 and the dynamic spin structure factor (DSSF) <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>,
 using SU(N) mode.</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{S}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\hat{S}_{\boldsymbol{k}}^\mu = \frac{1}{\sqrt{N_\infty}} \sum_i e^{-i\boldsymbol{k}\cdot \boldsymbol{r}_i} \hat{S}_i^\mu .\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

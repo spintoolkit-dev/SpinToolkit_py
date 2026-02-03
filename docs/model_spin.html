@@ -80,7 +80,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.prt_mc_list"><code class="docutils literal notranslate"><span class="pre">model_spin.prt_mc_list()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.simplify"><code class="docutils literal notranslate"><span class="pre">model_spin.simplify()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.total_sites"><code class="docutils literal notranslate"><span class="pre">model_spin.total_sites()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.E0"><code class="docutils literal notranslate"><span class="pre">model_spin.E0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.E_shift"><code class="docutils literal notranslate"><span class="pre">model_spin.E_shift</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.S"><code class="docutils literal notranslate"><span class="pre">model_spin.S</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.model_spin.mode"><code class="docutils literal notranslate"><span class="pre">model_spin.mode</span></code></a></li>
 </ul>
@@ -351,14 +351,14 @@ So, <cite>build_mc_list</cite> must be executed immediately after model simplifi
 <dl class="py method">
 <dt class="sig sig-object py" id="spintoolkit_py.model_spin.cal_dipolar_D">
 <span class="sig-name descname"><span class="pre">cal_dipolar_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.model_spin" title="spintoolkit_py.model_spin"><span class="pre">spintoolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="units.html#spintoolkit_py.units" title="spintoolkit_py.units"><span class="pre">spintoolkit_py.units</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#spintoolkit_py.model_spin.cal_dipolar_D" title="Link to this definition"></a></dt>
-<dd><p>Calculate the coefficient of the dipole-dipole interaction.</p>
+<dd><p>Calculate the coefficient of the dipole-dipole interaction using the given unit system.</p>
 <div class="math notranslate nohighlight">
 \[D = \frac{\mu_0}{4\pi} \frac{(g \mu_B)^2}{R^3},\]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the length of the shortest bond on the lattice.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>units</strong> – The units system object.</p></li>
+<li><p><strong>units</strong> – The unit to be used.</p></li>
 <li><p><strong>g</strong> – The g-factor.</p></li>
 </ul>
 </dd>
@@ -523,8 +523,8 @@ Should be called before running LSW calculations.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="spintoolkit_py.model_spin.E0">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">E0</span></span><a class="headerlink" href="#spintoolkit_py.model_spin.E0" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="spintoolkit_py.model_spin.E_shift">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">E_shift</span></span><a class="headerlink" href="#spintoolkit_py.model_spin.E_shift" title="Link to this definition"></a></dt>
 <dd><p>Constant shift of the Hamiltonian after model simplification.</p>
 </dd></dl>
 
