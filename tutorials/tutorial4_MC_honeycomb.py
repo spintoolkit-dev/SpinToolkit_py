@@ -32,9 +32,10 @@ for arg, value in vars(args).items():
 print()
 
 
-# Define a honeycomb lattice to be used
+# Honeycomb lattice
 l = args.l
 latt = sptk.lattice(name = "honeycomb", l = [l, l])
+L = latt.total_sites()
 
 
 # Define the model and include magnetic couplings
@@ -45,7 +46,6 @@ J3 = args.J3
 hamiltonian = sptk.model_spin(S = 0.5, mode = "dipole", lattice = latt)
 print()
 
-L = latt.total_sites()
 for site_i in range(L):
     coor_i, sub_i = latt.site2coor(site = site_i)
     coor0_i, r̃i   = latt.r2superlattice(coor = coor_i)
