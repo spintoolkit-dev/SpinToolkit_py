@@ -76,9 +76,11 @@ First, start a container in the background. This shares your local folder with t
 
 ``` shell
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ${PWD}/tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
 ```
-> **Note**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
+> **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
+> 
+> **Note 2**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
 
 Once the container is running, you can use one of the workflows below:
 
