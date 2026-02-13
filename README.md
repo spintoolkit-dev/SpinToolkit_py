@@ -35,11 +35,11 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
     #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
     ```
 
-   > **Note 1**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > **Note 1**: Older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
    > 
-   > **Note 2**: if you find the download speed to be low, turning on proxy/vpn should help.
+   > **Note 2**: If you find the download speed to be low, turning on proxy/vpn should help.
    >
-   > **Note 3**: to download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>`
+   > **Note 3**: To download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>`
 
 3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type.
 
@@ -138,7 +138,7 @@ docker run --rm \
 # e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
-> **Note**: the `:z` flag should be removed if your host is Windows.
+> **Note**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
 
 ## Changelog
 
