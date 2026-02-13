@@ -22,9 +22,9 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
 ## Download
 
-1. **Prerequisite**: Install [Docker](https://www.docker.com) **or** [Podman](https://podman.io/).
+1. **Prerequisite**: Install [Docker](https://www.docker.com) **or** [Podman](https://podman.io) (on local computer); or use [Apptainer](https://apptainer.org) (on HPC).
 
-   Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
+   These containerization tools offer convenient ways to run SpinToolkit on different operating systems (Linux/Mac/Win), and they share very similar usages. 
 
    > **Note to Podman users**: Podman supports standard Docker commands. To use them, you can create an alias (`alias docker=podman`) or, on Linux, install the `podman-docker` package to emulate the Docker CLI.
 
@@ -38,6 +38,8 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
    > **Note 1**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
    > 
    > **Note 2**: if you find the download speed to be low, turning on proxy/vpn should help.
+   >
+   > **Note 3**: to download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>`
 
 3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type.
 
@@ -51,11 +53,11 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
     # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
     ```
 
-## Docker & Podman Reference
+## Docker/Podman/Apptainer Reference
 
 ### Management Commands
 
-For a full list of commands, see the [Docker Docs](https://docs.docker.com/reference/cli/docker/) or [Podman Commands](https://docs.podman.io/en/latest/Commands.html).
+For a full list of commands, see the [Docker Docs](https://docs.docker.com/reference/cli/docker/), [Podman Commands](https://docs.podman.io/en/latest/Commands.html), and [Apptainer Documentation](https://apptainer.org/documentation).
 
 **Commonly used commands:**
 
