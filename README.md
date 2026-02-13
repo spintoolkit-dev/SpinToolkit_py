@@ -26,7 +26,7 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
    Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
 
-   > **Note to Podman users**: on systems like Ubuntu, you can install `podman-docker` or simply run `alias docker=podman` to use standard Docker syntax.
+   > **Note to Podman users**: Podman supports standard Docker commands. To use them, you can create an alias (`alias docker=podman`) or, on Linux, install the `podman-docker` package to emulate the Docker CLI.
 
 2. **Download Image**: Pull the SpinToolkit image from the command line.
 
