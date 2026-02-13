@@ -138,6 +138,8 @@ docker run --rm \
 # e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
+> **Note**: the `:z` flag should be removed if your host is Windows.
+
 ## Changelog
 
 - **v1.6.0** (02/03/2026)
