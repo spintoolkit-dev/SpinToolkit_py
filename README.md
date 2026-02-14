@@ -119,12 +119,8 @@ Once the container is running, you can use one of the workflows below:
     2. **Run your script**:
 
         ``` shell
-        # To run in foreground, use
         python3 <script_name> <input_arguments>
         # e.g., python3 tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
-        
-        # To run in background, use
-        nohup python3 <script_name> <input_arguments> &
         ```
 
     3. **Exit**: Type `exit` to leave the container.
