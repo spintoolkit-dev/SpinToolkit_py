@@ -43,3 +43,4 @@ xbuild
 *.xz
 *.dat
 *~
+*pycharm*

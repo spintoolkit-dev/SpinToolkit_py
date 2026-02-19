@@ -36,7 +36,7 @@ Core Functions
 
     .. math::
 
-       \mathcal{S}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
+       \mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
 
     where
 
@@ -82,7 +82,7 @@ Core Functions
 
     .. math::
 
-       \mathcal{S}_\text{quantum}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
+       \mathcal{S}^{\mu\nu}_\text{quantum}(\boldsymbol{k},\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\text{d}t e^{i \omega t} \left( \langle \hat{S}_{\boldsymbol{k}}^\mu (t) \hat{S}_{-\boldsymbol{k}}^\nu (0) \rangle - \langle \hat{S}_{\boldsymbol{k}}^\mu \rangle \langle \hat{S}_{-\boldsymbol{k}}^\nu \rangle \right),
 
     where
 
@@ -94,7 +94,7 @@ Core Functions
 
     .. math::
 
-       \mathcal{S}_\text{quantum}(\boldsymbol{k},\omega) = \beta \omega \mathcal{S}_\text{classical}(\boldsymbol{k},\omega).
+       \mathcal{S}^{\mu\nu}_\text{quantum}(\boldsymbol{k},\omega) = \beta \omega \mathcal{S}^{\mu\nu}_\text{classical}(\boldsymbol{k},\omega).
 
     Note: for Hamiltonian which conserves magnetization in EOM, when :math:`\mathrm{d}t \rightarrow 0` (exactly solving),
     there should be nothing at finite-omega at :math:`\boldsymbol{k}=0` (just fourier transforming a constant).
