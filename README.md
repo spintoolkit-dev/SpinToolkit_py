@@ -12,6 +12,7 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 ## Documentation and Tutorials
 
 - The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-py.readthedocs.io/stable/).
+  > **Note**: In case the [main Documentation Website](https://spintoolkit-py.readthedocs.io/stable/) is not accessible, try the [Backup Website](https://spintoolkit-dev.github.io/SpinToolkit_py/).
 
 
 - Tutorials are available in the `tutorials` folder. To try out these examples, you can 
