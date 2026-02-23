@@ -72,13 +72,17 @@ For a full list of commands, see the [Docker Docs](https://docs.docker.com/refer
 
 There are two ways to run SpinToolkit: keeping a container running in the background (Interactive Mode) or running a single script and exiting (Batch Mode).
 
-#### Method A: Interactive Mode (Recommended)
+#### Method A: Interactive Mode (Keep an active container in background)
 
 First, start a container in the background. This shares your local folder with the container so you can save your work.
 
 ``` shell
-docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ${PWD}/tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
+docker run -dit \
+       --name <container_name> \
+       -p <port>:<port> \
+       -v <local_dir>:<container_dir>:z \
+       <image_name>
+# e.g., docker run -dit --name sptk_tutorials -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
 ```
 > **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 > 
@@ -98,8 +102,8 @@ Once the container is running, you can use one of the workflows below:
     2. **Start Jupyter**:
 
         ``` shell
-        jupyter-notebook --allow-root --port=<port> --ip=<ip>
-        # e.g., jupyter-notebook --allow-root --port=8880 --ip=0.0.0.0
+        jupyter-notebook --no-browser --ip=<ip> --port=<port> --allow-root
+        # e.g., jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
         ```
 
     3. **Access**: Copy the generated URL into your host machine's browser.
@@ -107,7 +111,7 @@ Once the container is running, you can use one of the workflows below:
     4. **Exit**: When finished, stop Jupyter (Ctrl+C) and type `exit` to leave the container.
 
 
-- Workflow-A2: Run Python Scripts via Shell
+- Workflow-A2: Run python scripts via shell
 
     1. **Enter the container**:
 
@@ -129,16 +133,31 @@ Once the container is running, you can use one of the workflows below:
 
 If you do not want to maintain a running container, you can use `docker run --rm`. This creates a temporary container, runs your script, and deletes the container immediately after the script finishes.
 
-``` shell
-docker run --rm \
-       -v <local_dir>:<container_dir>:z \
-       -w <container_workdir> <image_name> \
-       python3 <python_script> \
-       <input_arguments>
-# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
-```
+- Workflow-B1: Jupyter Notebook
 
-> **Note**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
+    ``` shell
+    docker run --rm -it \
+           -p <port>:<port> \
+           -v <local_dir>:<container_dir>:z \
+           -w <container_workdir> \
+           <image_name> \
+           jupyter-notebook --no-browser --ip=<ip> --port=<port> --allow-root
+    # e.g., docker run --rm -it -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
+    ```
+
+- Workflow-B2: Run python scripts via shell
+
+    ``` shell
+    docker run --rm \
+           -v <local_dir>:<container_dir>:z \
+           -w <container_workdir> \
+           <image_name> \
+           python3 <python_script> <input_arguments>
+    # e.g., docker run --rm -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+    ```
+> **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
+> 
+> **Note 2**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
 
 ## Changelog
 
