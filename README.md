@@ -135,15 +135,21 @@ If you do not want to maintain a running container, you can use `docker run --rm
 
 - Workflow-B1: Jupyter Notebook
 
-    ``` shell
-    docker run --rm -it \
-           -p <port>:<port> \
-           -v <local_dir>:<container_dir>:z \
-           -w <container_workdir> \
-           <image_name> \
-           jupyter-notebook --no-browser --ip=<ip> --port=<port> --allow-root
-    # e.g., docker run --rm -it -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
-    ```
+    1. **Start Jupyter**:
+
+        ``` shell
+        docker run --rm -it \
+               -p <port>:<port> \
+               -v <local_dir>:<container_dir>:z \
+               -w <container_workdir> \
+               <image_name> \
+               jupyter-notebook --no-browser --ip=<ip> --port=<port> --allow-root
+        # e.g., docker run --rm -it -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
+        ```
+
+    2. **Access**: Copy the generated URL into your host machine's browser.
+
+    3. **Exit**: When finished, stop Jupyter (Ctrl+C).
 
 - Workflow-B2: Run python scripts via shell
 
