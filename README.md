@@ -83,7 +83,14 @@ docker run -dit \
        -p <port>:<port> \
        -v <local_dir>:<container_dir>:z \
        <image_name>
-# e.g., docker run -dit --name sptk_tutorials -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z spintoolkit:1.6.0
+```
+e.g.,
+``` shell
+docker run -dit \
+       --name sptk_tutorials \
+       -p 8880:8880 \
+       -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
+       spintoolkit:1.6.0
 ```
 > **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 > 
@@ -145,7 +152,15 @@ If you do not want to maintain a running container, you can use `docker run --rm
                -w <container_workdir> \
                <image_name> \
                jupyter-notebook --no-browser --ip=<ip> --port=<port> --allow-root
-        # e.g., docker run --rm -it -p 8880:8880 -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
+        ```
+        e.g.,
+        ``` shell
+        docker run --rm -it \
+               -p 8880:8880 \
+               -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
+               -w /home/ubuntu/tutorials \
+               spintoolkit:1.6.0 \
+               jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
         ```
 
     2. **Access**: Copy the generated URL into your host machine's browser.
@@ -160,8 +175,16 @@ If you do not want to maintain a running container, you can use `docker run --rm
            -w <container_workdir> \
            <image_name> \
            python3 <python_script> <input_arguments>
-    # e.g., docker run --rm -v ${PWD}/tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.6.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
     ```
+    e.g.,
+    ``` shell
+    docker run --rm \
+           -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
+           -w /home/ubuntu/tutorials \
+           spintoolkit:1.6.0 \
+           python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+    ```
+
 > **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 > 
 > **Note 2**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
