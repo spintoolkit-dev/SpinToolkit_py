@@ -12,7 +12,7 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 ## Documentation and Tutorials
 
 - The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-py.readthedocs.io/stable/).
-  > **Note**: In case the [main Documentation Website](https://spintoolkit-py.readthedocs.io/stable/) is not accessible, try the [Backup Website](https://spintoolkit-dev.github.io/SpinToolkit_py/).
+  > **Note**: In case the main Documentation Website is not accessible, try the [Backup Website](https://spintoolkit-dev.github.io/SpinToolkit_py/).
 
 
 - Tutorials are available in the `tutorials` folder. To try out these examples, you can 
@@ -36,11 +36,13 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
     #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
     ```
 
-   > **Note 1**: Older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > **Note 1**: The image is based on [Linux](https://en.wikipedia.org/wiki/Linux). To use SpinToolkit, some basic knowledge of [Linux Command-Line Tools](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/index.html) certainly helps.
    > 
-   > **Note 2**: If you find the download speed to be low, turning on proxy/vpn should help.
+   > **Note 2**: Older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+   > 
+   > **Note 3**: If you find the download speed to be low, turning on proxy/vpn should help.
    >
-   > **Note 3**: To download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>`
+   > **Note 4**: To download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>`
 
 3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type.
 
