@@ -176,7 +176,7 @@ If you do not want to maintain a running container, you can use `docker run --rm
            -v <local_dir>:<container_dir>:z \
            -w <container_workdir> \
            <image_name> \
-           python3 <python_script> <input_arguments>
+           sh -c 'python3 <python_script> <input_arguments>'
     ```
     e.g.,
     ``` shell
@@ -184,7 +184,7 @@ If you do not want to maintain a running container, you can use `docker run --rm
            -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
            -w /home/ubuntu/tutorials \
            spintoolkit:1.6.0 \
-           python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+           sh -c 'python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000'
     ```
 
 > **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
