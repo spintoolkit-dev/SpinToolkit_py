@@ -224,12 +224,20 @@ If you do not want to maintain a running container, you can use `docker run --rm
 
 ## Citing
 
-If you find SpinToolkit useful, please cite this paper:
+If you used SpinToolkit in your research, please cite us:
 
 ```bibtex
 @misc{sptk,
+  note = {SpinToolkit, \url{https://github.com/spintoolkit-dev/SpinToolkit_py}}
+}
+```
+
+To reference the LSW/GLSW calculations, please also include:
+
+```bibtex
+@article{XuL2026,
 author = {Xu, L. and Shi, X. and Jiao, Y. and Yang, J. and Yang, L. and Wang, Z.},
-title = {In preparation},
+journal = {In preparation},
 year = {2026}
 }
 ```
