@@ -39,7 +39,7 @@ If you used SpinToolkit in your research, please cite us:
 ```bibtex
 @misc{sptk,
   author = {{SpinToolkit Developers}},
-  title  = {SpinToolkit},
+  title  = {{SpinToolkit}},
   year   = {2026},
   url    = {https://github.com/spintoolkit-dev/SpinToolkit_py}
 }
