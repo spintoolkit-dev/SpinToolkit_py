@@ -12,21 +12,14 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 - Linear spin wave (LSW) based on Monte-Carlo sampling + Equation of motion approach
 - ...
 
-## Getting Started
-
-For a step-by-step introduction to SpinToolkit, see the [Getting Started Guide](GETTING_STARTED.md).
-
 ## Documentation
 
-The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-py.readthedocs.io/stable/).
+- 🚀 [Getting Started](GETTING_STARTED.md)
+- 🐳 [Container Reference](CONTAINER_REF.md)
+- 📖 [API Docs](https://spintoolkit-py.readthedocs.io/stable/)
 
-## Container Reference
+**Quick example — launch a Jupyter Notebook session:**
 
-SpinToolkit runs inside a Docker/Podman/Apptainer container. For the full list of 
-workflows, see the 
-[Container Reference](CONTAINER_REF.md).
-
-**Quick example** (Batch mode, Jupyter):
 ```bash  
 docker run --rm -it \
        -p 8880:8880 \
@@ -35,6 +28,8 @@ docker run --rm -it \
        spintoolkit:1.6.0 \
        jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
 ```
+
+Copy the printed URL into your browser to access the notebook. See the [Getting Started](GETTING_STARTED.md) for a full walkthrough.
 
 
 ## Citing

@@ -89,6 +89,6 @@ Copy the printed URL (starting with `http://127.0.0.1:8880/...`) into your brows
 
 ## What's Next?
 
-- 📖 [Full API Documentation](https://spintoolkit-py.readthedocs.io/stable/)
 - 🐳 [Container Reference](CONTAINER_REF.md)
+- 📖 [API Docs](https://spintoolkit-py.readthedocs.io/stable/)
 - 💬 [Open an Issue](https://github.com/spintoolkit-dev/SpinToolkit_py/issues)
