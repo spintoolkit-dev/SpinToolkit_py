@@ -172,24 +172,26 @@ If you do not want to maintain a running container, you can use `docker run --rm
 - Workflow-B2: Run python scripts via shell
 
     ``` shell
-    docker run --rm \
+    docker run --rm -d \
            -v <local_dir>:<container_dir>:z \
            -w <container_workdir> \
            <image_name> \
-           sh -c 'python3 <python_script> <input_arguments>'
+           sh -c 'python3 <python_script> <input_arguments> > output.txt'
     ```
     e.g.,
     ``` shell
-    docker run --rm \
+    docker run --rm -d \
            -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
            -w /home/ubuntu/tutorials \
            spintoolkit:1.6.0 \
-           sh -c 'python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000'
+           sh -c 'python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000 > output.txt'
     ```
 
 > **Note 1**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 > 
 > **Note 2**: On Windows host, use `<local_dir>:<container_dir>` instead of `<local_dir>:<container_dir>:z` as the `:z` flag is for SELinux (Security Enhanced Linux).
+> 
+> **Note 3**: When using Workflow-B2 in a remote Linux SSH session with Podman, make sure lingering is enabled for your user account: `loginctl show-user "$USER" -p Linger`. If the output is `Linger=no`, you should contact the administrator to enable it: `loginctl enable-linger "$USER"`; otherwise, your work will likely be killed when the SSH session is terminated.
 
 ## Changelog
 
