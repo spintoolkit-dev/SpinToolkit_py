@@ -38,7 +38,7 @@ Copy the printed URL into your browser to access the notebook. See the [Getting 
 If you used SpinToolkit in your research, please cite us:
 
 ```bibtex
-@misc{sptk,
+@software{sptk,
   author = {{SpinToolkit Developers}},
   title  = {{SpinToolkit}},
   year   = {2026},
