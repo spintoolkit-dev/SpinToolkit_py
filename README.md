@@ -39,11 +39,12 @@ If you used SpinToolkit in your research, please cite us:
 
 ```bibtex
 @software{sptk,
-  author = {{SpinToolkit Developers}},
-  title  = {{SpinToolkit}},
-  year   = {2026},
-  doi    = {10.5281/zenodo.18948515},
-  url    = {https://github.com/spintoolkit-dev/SpinToolkit_py}
+  author    = {{SpinToolkit Developers}},
+  title     = {{SpinToolkit}},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.18948515},
+  url       = {https://github.com/spintoolkit-dev/SpinToolkit_py}
 }
 ```
 
