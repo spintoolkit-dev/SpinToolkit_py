@@ -38,13 +38,13 @@ Copy the printed URL into your browser to access the notebook. See the [Getting 
 If you used SpinToolkit in your research, please cite us:
 
 ```bibtex
-@software{sptk,
-  author    = {{SpinToolkit Developers}},
-  title     = {{SpinToolkit}},
-  year      = {2026},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.18948515},
-  url       = {https://github.com/spintoolkit-dev/SpinToolkit_py}
+@misc{sptk,
+  author       = {{SpinToolkit Developers}},
+  title        = {{SpinToolkit}},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.18948515},
+  howpublished = {\url{https://github.com/spintoolkit-dev/SpinToolkit_py}}
 }
 ```
 
