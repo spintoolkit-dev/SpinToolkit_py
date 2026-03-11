@@ -1,7 +1,8 @@
 # SpinToolkit
 
-![License](https://img.shields.io/badge/license-BSD--3--Clause-blue)
-![Docs](https://readthedocs.org/projects/spintoolkit-py/badge/?version=stable)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948515.svg)](https://doi.org/10.5281/zenodo.18948515)
+[![License](https://img.shields.io/badge/license-BSD--3--Clause-blue)](https://opensource.org/licenses/BSD-3-Clause)
+[![Docs](https://readthedocs.org/projects/spintoolkit-py/badge/?version=stable)](https://spintoolkit-py.readthedocs.io/stable/)
 
 SpinToolkit is a high-performance toolkit for simulating spin systems, including the following key functionalities:
 
@@ -41,6 +42,7 @@ If you used SpinToolkit in your research, please cite us:
   author = {{SpinToolkit Developers}},
   title  = {{SpinToolkit}},
   year   = {2026},
+  doi    = {10.5281/zenodo.18948515},
   url    = {https://github.com/spintoolkit-dev/SpinToolkit_py}
 }
 ```
