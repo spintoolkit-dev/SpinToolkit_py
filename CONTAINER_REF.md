@@ -136,3 +136,9 @@ If you do not want to maintain a running container, you can use `docker run --rm
 - **Remote SSH + Podman**:
 
     When using Workflow-B2 in a remote Linux SSH session with Podman, make sure lingering is enabled for your user account: `loginctl show-user "$USER" -p Linger`. If the output is `Linger=no`, you should contact the administrator to enable it: `loginctl enable-linger "$USER"`; otherwise, your work will likely be killed when the SSH session is terminated.
+
+## Links
+
+- 🚀 [Getting Started](GETTING_STARTED.md)
+- 📖 [API Docs](https://spintoolkit-py.readthedocs.io/stable/)
+- 💬 [Open an Issue](https://github.com/spintoolkit-dev/SpinToolkit_py/issues)
