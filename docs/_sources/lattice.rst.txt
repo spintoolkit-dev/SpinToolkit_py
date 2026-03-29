@@ -11,7 +11,7 @@ Class
     :members:
     :undoc-members:
     :show-inheritance:
-    :exclude-members: __init__, coor2cart
+    :exclude-members: __init__, coor2cart, all_bonds_on_lattice
 
     .. method:: __init__(self)
 
@@ -99,3 +99,43 @@ Class
         :param sub: Index of sublattice.
         :rtype: list[float]
         :return: Cartesian coordinate :math:`[x,y,z]`.
+
+    .. method:: all_bonds_on_lattice(self, *, min_len: float, max_len: float, tol_rel: float) -> list[tuple[float, list[tuple[list[int], list[int]]]]]
+
+        Generate a list of bonds with length in range [min_len, max_len] on the lattice.
+
+        Each element in the list is <len, bond_list> for a list of bonds of the same length.
+
+        Each element in bond_list is <[site_i, site_j], :math:`\tilde{\boldsymbol{r}}_{ij}`>.
+
+        :math:`\tilde{\boldsymbol{r}}_{ij}` is the difference of superlattice coordinates:
+
+        .. math::
+
+           \tilde{\boldsymbol{r}}_i - \tilde{\boldsymbol{r}}_j = \sum_n \tilde{r}_{ij}^n \boldsymbol{A}_n.
+
+        :param min_len: Minimal bond length to be considered.
+        :param max_len: Maximal bond length to be considered.
+        :param tol_rel: Tolerance for checking distance.
+        :rtype: list[tuple[float, list[tuple[list[int], list[int]]]]]
+        :return: list[<len, list[<[site_i, site_j], :math:`\tilde{\boldsymbol{r}}_{ij}`>]>].
+
+    .. method:: all_bonds_on_lattice(self, *, n_neighbors: int, tol_rel: float) -> list[tuple[float, list[tuple[list[int], list[int]]]]]
+        :no-index:
+
+        Generate a list of bonds up to a certain number of neighbors on the lattice.
+
+        Each element in the list is <len, bond_list> for a list of bonds of the same length.
+
+        Each element in bond_list is <[site_i, site_j], :math:`\tilde{\boldsymbol{r}}_{ij}`>.
+
+        :math:`\tilde{\boldsymbol{r}}_{ij}` is the difference of superlattice coordinates:
+
+        .. math::
+
+           \tilde{\boldsymbol{r}}_i - \tilde{\boldsymbol{r}}_j = \sum_n \tilde{r}_{ij}^n \boldsymbol{A}_n.
+
+        :param n_neighbors: Number of coordination shells (number of neighbors) to extract.
+        :param tol_rel: Tolerance for checking distance.
+        :rtype: list[tuple[float, list[tuple[list[int], list[int]]]]]
+        :return: list[<len, list[<[site_i, site_j], :math:`\tilde{\boldsymbol{r}}_{ij}`>]>].

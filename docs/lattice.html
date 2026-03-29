@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Class &mdash; SpinToolkit v1.6.0 documentation</title>
+  <title>Class &mdash; SpinToolkit v1.6.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
@@ -13,7 +13,7 @@
   
         <script src="_static/jquery.js?v=8dae8fb0"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=896c6380"></script>
+        <script src="_static/documentation_options.js?v=2d14e799"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -54,6 +54,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#spintoolkit_py.lattice"><code class="docutils literal notranslate"><span class="pre">lattice</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.__init__"><code class="docutils literal notranslate"><span class="pre">lattice.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.coor2cart"><code class="docutils literal notranslate"><span class="pre">lattice.coor2cart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.all_bonds_on_lattice"><code class="docutils literal notranslate"><span class="pre">lattice.all_bonds_on_lattice()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.all_bonds_for_site"><code class="docutils literal notranslate"><span class="pre">lattice.all_bonds_for_site()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.bond_length_min"><code class="docutils literal notranslate"><span class="pre">lattice.bond_length_min()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.coor2site"><code class="docutils literal notranslate"><span class="pre">lattice.coor2site()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spintoolkit_py.lattice.k2superlattice"><code class="docutils literal notranslate"><span class="pre">lattice.k2superlattice()</span></code></a></li>
@@ -263,6 +265,82 @@ given coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and s
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Cartesian coordinate <span class="math notranslate nohighlight">\([x,y,z]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spintoolkit_py.lattice.all_bonds_on_lattice">
+<span class="sig-name descname"><span class="pre">all_bonds_on_lattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_rel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.all_bonds_on_lattice" title="Link to this definition"></a></dt>
+<dd><p>Generate a list of bonds with length in range [min_len, max_len] on the lattice.</p>
+<p>Each element in the list is &lt;len, bond_list&gt; for a list of bonds of the same length.</p>
+<p>Each element in bond_list is &lt;[site_i, site_j], <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span>&gt;.</p>
+<p><span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span> is the difference of superlattice coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\boldsymbol{r}}_i - \tilde{\boldsymbol{r}}_j = \sum_n \tilde{r}_{ij}^n \boldsymbol{A}_n.\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_len</strong> – Minimal bond length to be considered.</p></li>
+<li><p><strong>max_len</strong> – Maximal bond length to be considered.</p></li>
+<li><p><strong>tol_rel</strong> – Tolerance for checking distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[tuple[float, list[tuple[list[int], list[int]]]]]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[&lt;len, list[&lt;[site_i, site_j], <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span>&gt;]&gt;].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">all_bonds_on_lattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_rel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Generate a list of bonds up to a certain number of neighbors on the lattice.</p>
+<p>Each element in the list is &lt;len, bond_list&gt; for a list of bonds of the same length.</p>
+<p>Each element in bond_list is &lt;[site_i, site_j], <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span>&gt;.</p>
+<p><span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span> is the difference of superlattice coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\boldsymbol{r}}_i - \tilde{\boldsymbol{r}}_j = \sum_n \tilde{r}_{ij}^n \boldsymbol{A}_n.\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_neighbors</strong> – Number of coordination shells (number of neighbors) to extract.</p></li>
+<li><p><strong>tol_rel</strong> – Tolerance for checking distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[tuple[float, list[tuple[list[int], list[int]]]]]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[&lt;len, list[&lt;[site_i, site_j], <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_{ij}\)</span>&gt;]&gt;].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spintoolkit_py.lattice.all_bonds_for_site">
+<span class="sig-name descname"><span class="pre">all_bonds_for_site</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spintoolkit_py.lattice" title="spintoolkit_py.lattice"><span class="pre">spintoolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_rel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsIndex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#spintoolkit_py.lattice.all_bonds_for_site" title="Link to this definition"></a></dt>
+<dd><p>Return a list of &lt;len, &lt;sub’, <span class="math notranslate nohighlight">\(m_0^\prime\)</span>, <span class="math notranslate nohighlight">\(m_1^\prime\)</span>, …]&gt;&gt;
+that start from a given sublattice, where the starting sublattice (sub)
+is at the 0th unit cell, and the target sublattice (sub’) is at
+<span class="math notranslate nohighlight">\(\sum_i m_i^\prime \boldsymbol{a}_i\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub</strong> – Sublattice index of the starting site.</p></li>
+<li><p><strong>min_len</strong> – Minimal bond length to be considered.</p></li>
+<li><p><strong>max_len</strong> – Maximal bond length to be considered.</p></li>
+<li><p><strong>tol_rel</strong> – Tolerance for checking distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of &lt;len, &lt;sub’, <span class="math notranslate nohighlight">\(m_0^\prime\)</span>, <span class="math notranslate nohighlight">\(m_1^\prime\)</span>, …]&gt;&gt;.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[tuple[float, tuple[int, list[int]]]]</p>
 </dd>
 </dl>
 </dd></dl>
