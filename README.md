@@ -26,7 +26,7 @@ docker run --rm -it \
        -p 8880:8880 \
        -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
        -w /home/ubuntu/tutorials \
-       spintoolkit:1.6.0 \
+       spintoolkit:1.6.1 \
        jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
 ```
 

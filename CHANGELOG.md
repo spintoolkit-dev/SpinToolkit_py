@@ -2,6 +2,13 @@
 
 ## **SpinToolkit 1.6**
 
+- v1.6.1 (03/29/2026)
+
+    - Implement `all_bonds_for_site` and `all_bonds_on_lattice` member functions for `lattice` class.
+    - Include `jupyter-nbconvert` in image.
+    - No longer copy `lattice` folder to image.
+    - Various minor improvements.
+
 - v1.6.0 (02/03/2026)
 
     - **BREAKING**: Multiply prefactor 1/2π in definition of DSSF to be more consistent with classical inelastic neutron scattering textbooks.

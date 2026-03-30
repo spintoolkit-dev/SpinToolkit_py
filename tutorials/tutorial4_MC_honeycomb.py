@@ -46,6 +46,8 @@ J3 = args.J3
 hamiltonian = sptk.model_spin(S = 0.5, mode = "dipole", lattice = latt)
 print()
 
+
+# Approach-1: Add couplings manually for full flexibility
 for site_i in range(L):
     coor_i, sub_i = latt.site2coor(site = site_i)
     coor0_i, r̃i   = latt.r2superlattice(coor = coor_i)
@@ -119,6 +121,28 @@ for site_i in range(L):
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J3),
                                   site_i = site_i, site_j = site_j,
                                   rtilde_i = r̃i, rtilde_j = r̃j)
+
+# Approach-2: Use the built-in `all_bonds_on_lattice` function for simple couplings
+# Comment out previous lines in Approach-1 and uncomment the following to enable Approach-2
+# [bonds1, bonds2, bonds3] = latt.all_bonds_on_lattice(n_neighbors = 3, tol_rel = 1.0e-5)
+# print(f"Length of 1st-neighbor bonds: {bonds1[0]}")
+# for bond in bonds1[1]:
+#     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J1),
+#                               site_i = bond[0][0], site_j = bond[0][1],
+#                               rtilde_i = bond[1], rtilde_j = [0, 0])
+
+# print(f"Length of 2nd-neighbor bonds: {bonds2[0]}")
+# for bond in bonds2[1]:
+#     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J2),
+#                               site_i = bond[0][0], site_j = bond[0][1],
+#                               rtilde_i = bond[1], rtilde_j = [0, 0])
+
+# print(f"Length of 3rd-neighbor bonds: {bonds3[0]}")
+# for bond in bonds3[1]:
+#     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J3),
+#                               site_i = bond[0][0], site_j = bond[0][1],
+#                               rtilde_i = bond[1], rtilde_j = [0, 0])
+
 
 hamiltonian.simplify().build_mc_list()
 print()

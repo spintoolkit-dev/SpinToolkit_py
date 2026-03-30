@@ -20,17 +20,17 @@ Install one of the following container engines (only one is needed):
 ## Step 2 — Pull the Image
 
 ``` shell
-docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
+docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.6.1
 ```
 
 Optionally, create a shorter tag:
 
 ``` shell
 # Create the short alias
-docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.6.0 spintoolkit:1.6.0
+docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.6.1 spintoolkit:1.6.1
 
 # Remove the reference to the long name to clean up list
-docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
+docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.6.1
 ```
 
 > **Note 1**: The image is based on [Linux](https://en.wikipedia.org/wiki/Linux). To use SpinToolkit, some basic knowledge of [Linux Command-Line Tools](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/index.html) certainly helps.
@@ -39,7 +39,7 @@ docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.6.0
 > 
 > **Note 3**: If you find the download speed to be low, turning on proxy/vpn should help.
 >
-> **Note 4**: To download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:1.6.0`
+> **Note 4**: To download to Apptainer: `apptainer pull docker://ghcr.io/spintoolkit-dev/spintoolkit:1.6.1`
 
 
 ---
@@ -63,7 +63,7 @@ docker run --rm -it \
        -p 8880:8880 \
        -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
        -w /home/ubuntu/tutorials \
-       spintoolkit:1.6.0 \
+       spintoolkit:1.6.1 \
        jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root  
 ```
 

@@ -34,7 +34,7 @@ docker run -dit \
        --name sptk_tutorials \
        -p 8880:8880 \
        -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
-       spintoolkit:1.6.0
+       spintoolkit:1.6.1
 ```
 > **Note**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 
@@ -101,7 +101,7 @@ If you do not want to maintain a running container, you can use `docker run --rm
                -p 8880:8880 \
                -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
                -w /home/ubuntu/tutorials \
-               spintoolkit:1.6.0 \
+               spintoolkit:1.6.1 \
                jupyter-notebook --no-browser --ip=0.0.0.0 --port=8880 --allow-root
         ```
 
@@ -123,7 +123,7 @@ If you do not want to maintain a running container, you can use `docker run --rm
     docker run --rm -d \
            -v ${PWD}/tutorials:/home/ubuntu/tutorials:z \
            -w /home/ubuntu/tutorials \
-           spintoolkit:1.6.0 \
+           spintoolkit:1.6.1 \
            sh -c 'python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000 > output.txt'
     ```
 
