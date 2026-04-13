@@ -2,6 +2,12 @@
 
 ## **SpinToolkit 1.6**
 
+- v1.6.2 (04/13/2026)
+
+    - Enable biquadratic interactions in LSW (dipole mode).
+    - Return the rotation matrices in `init_GLSW`.
+    - Various minor improvements.
+
 - v1.6.1 (03/29/2026)
 
     - Implement `all_bonds_for_site` and `all_bonds_on_lattice` member functions for `lattice` class.
@@ -11,7 +17,7 @@
 
 - v1.6.0 (02/03/2026)
 
-    - **BREAKING**: Multiply prefactor 1/2π in definition of DSSF to be more consistent with classical inelastic neutron scattering textbooks.
+    - **BREAKING**: Multiply prefactor 1/2π in the definition of DSSF to be more consistent with classical inelastic neutron scattering textbooks.
     - **BREAKING**: Change type of `basis_a` and `pos_sub` in `Crystal` class to be more consistent with `lattice` class.
     - Include linear equation solver for self-adjoint matrices. 
     - Various minor improvements.
